@@ -10,7 +10,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 st.set_page_config(page_title="Langchain: text summarize from Url and Youtube")
 st.title("Langchain: text summarize from Url and Youtube")
 st.subheader("Summarize URL")
-
+st.write("Please enter Groq Api key")
 
 #Get api key and url field 
 
