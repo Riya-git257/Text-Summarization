@@ -21,6 +21,6 @@ langchain
 langchain-groq
 langchain-community
 validators
-youtube-transcript-api
+youtube-transcript-api==0.6.1
 beautifulsoup4
 requests
