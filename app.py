@@ -60,7 +60,17 @@ if st.button("Load url 🍵"):
     with st.spinner("Loading document...."):
 
         try:
-            docs = load_website(url)
+            if "youtube.com" in url or "youtu.be" in url:
+
+                st.info("Loading YouTube transcript...")
+
+                docs = load_youtube(url)
+
+            else:
+
+                st.info("Loading Website...")
+
+                docs = load_website(url)
 
             chunks = split_documents(docs)
 

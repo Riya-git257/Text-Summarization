@@ -1,7 +1,8 @@
 import re
 import streamlit as st
-from langchain_community.document_loaders import YoutubeLoader, WebBaseLoader
-
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_core.documents import Document
+from youtube_transcript_api import YouTubeTranscriptApi
 
 def extract_video_id(url: str):
     patterns = [
@@ -26,18 +27,26 @@ def load_youtube(url: str):
     if not video_id:
         raise Exception("Invalid YouTube URL")
 
-    loader = YoutubeLoader(
-        video_id=video_id,
-        add_video_info=True,
-        language=["en", "en-US", "en-IN", "hi"],
-    )
+    try:
+        transcript = YouTubeTranscriptApi.get_transcript(
+            video_id,
+            languages=["en", "hi"]
+        )
 
-    docs = loader.load()
+    except Exception as e:
+        raise Exception(f"Could not fetch transcript: {e}")
 
-    if not docs or not docs[0].page_content.strip():
-        raise Exception("Transcript not found.")
+    text = " ".join(chunk["text"] for chunk in transcript)
 
-    return docs
+    return [
+        Document(
+            page_content=text,
+            metadata={
+                "source": url,
+                "video_id": video_id
+            }
+        )
+    ]
 
 
 def load_website(url: str):
