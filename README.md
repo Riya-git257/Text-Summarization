@@ -60,8 +60,8 @@ Instead of sending the entire document to the LLM, the application retrieves onl
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
-cd <repository-name>
+git clone https://github.com/Riya-git257/Text-Summarization.git
+cd your-repository
 ```
 
 Create a virtual environment:
