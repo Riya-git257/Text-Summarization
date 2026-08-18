@@ -1,4 +1,3 @@
-# Text-Summarization
 # 🔗 AI URL Summarizer with RAG
 
 An intelligent **Retrieval-Augmented Generation (RAG)** application that summarizes and answers questions about **web pages** using **LangChain, FAISS, Hugging Face Embeddings, Groq LLM, and Streamlit**.
@@ -161,3 +160,4 @@ Contributions, feature requests, and suggestions are welcome. Feel free to open 
 ## 📜 License
 
 This project is intended for educational and learning purposes.
+
