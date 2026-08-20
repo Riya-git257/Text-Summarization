@@ -6,6 +6,14 @@ Instead of sending the entire document to the LLM, the application retrieves onl
 
 ---
 
+## 🌐 Live Demo
+
+🚀 **Try the deployed application here:**
+
+👉 **[Open AI URL Summarizer](https://text-summarization-iv9dtagak9gjkjkpdqtkl3.streamlit.app/)**
+
+---
+
 ## ✨ Features
 
 * 🌐 Summarize content from any public website.
